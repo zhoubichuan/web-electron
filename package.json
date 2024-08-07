@@ -1,10 +1,10 @@
 {
-  "name": "web-mysql",
+  "name": "web-electron",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "author": "zhoubichaun@icloud.com",
-  "hommepage": "https://github.com/zhoubichuan/web-mysql/",
+  "hommepage": "https://github.com/zhoubichuan/web-electron/",
   "private": true,
   "license": "MIT",
   "scripts": {
