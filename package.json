@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "vuepress dev src",
     "build": "vuepress build src",
-    "scp:prod": "scp -r ./web-electron/* root@zhoubichuan.com:/usr/src/zhoubichuan/prod/",
+    "scp:prod": "scp -r ./web-electron/* root@zhoubichuan.com:/usr/src/zhoubichuan/prod/web-electron/",
     "publish": "gulp && cd lib && npm publish",
     "build:comps": "gulp",
     "deploy": "bash deploy.sh",
