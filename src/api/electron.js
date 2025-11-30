@@ -19,3 +19,12 @@ export const npm = async (value) => {
     });
   });
 }
+
+export const calendar = async (value) => {
+  window.electron?.ipcRenderer?.sendMessage('calendar', [value]);
+  return new Promise((resolve) => {
+    window.electron?.ipcRenderer?.once('calendar', (arg) => {
+      resolve(arg);
+    });
+  });
+}
