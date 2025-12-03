@@ -28,3 +28,12 @@ export const calendar = async (value) => {
     });
   });
 }
+
+export const openApp = async (value) => {
+  window.electron?.ipcRenderer?.sendMessage('app', [value]);
+  return new Promise((resolve) => {
+    window.electron?.ipcRenderer?.once('app', (arg) => {
+      resolve(arg);
+    });
+  });
+}
