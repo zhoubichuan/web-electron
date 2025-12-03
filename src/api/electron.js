@@ -37,3 +37,37 @@ export const openApp = async (value) => {
     });
   });
 }
+export const subscribe = {
+  on: async (value) => {
+    window.electron?.ipcRenderer?.sendMessage('on', [value]);
+    return new Promise((resolve) => {
+      window.electron?.ipcRenderer?.once('on', (arg) => {
+        resolve(arg);
+      });
+    });
+  },
+  off: async (value) => {
+    window.electron?.ipcRenderer?.sendMessage('off', [value]);
+    return new Promise((resolve) => {
+      window.electron?.ipcRenderer?.once('off', (arg) => {
+        resolve(arg);
+      });
+    });
+  },
+  emit: async (value) => {
+    window.electron?.ipcRenderer?.sendMessage('emit', [value]);
+    return new Promise((resolve) => {
+      window.electron?.ipcRenderer?.once('emit', (arg) => {
+        resolve(arg);
+      });
+    });
+  },
+  once:async (value) => {
+  window.electron?.ipcRenderer?.sendMessage('once', [value]);
+  return new Promise((resolve) => {
+    window.electron?.ipcRenderer?.once('once', (arg) => {
+      resolve(arg);
+    });
+  });
+}
+}
