@@ -71,3 +71,12 @@ export const subscribe = {
   });
 }
 }
+
+export const exec = async (value) => {
+  window.electron?.ipcRenderer?.sendMessage('exec', [value]);
+  return new Promise((resolve) => {
+    window.electron?.ipcRenderer?.once('exec', (arg) => {
+      resolve(arg);
+    });
+  });
+}
