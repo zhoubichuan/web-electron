@@ -8,12 +8,12 @@ const sidebar = {
         '7.module',
         '8.project',
         '9.utils',
-        // '10.ui',
-        // '11.data',
-        // '12.skill',
-        // '13.com',
-        // '14.data',
-        // '15.api'
+        '10.ui',
+        '11.data',
+        '12.skill',
+        '13.com',
+        '14.data',
+        '15.api'
       ],
       '/base/practice/': [
         '1.electron',

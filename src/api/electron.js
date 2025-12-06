@@ -80,3 +80,12 @@ export const exec = async (value) => {
     });
   });
 }
+
+export const os = async (value) => {
+  window.electron?.ipcRenderer?.sendMessage('os', [value]);
+  return new Promise((resolve) => {
+    window.electron?.ipcRenderer?.once('os', (arg) => {
+      resolve(arg);
+    });
+  });
+}
