@@ -84,3 +84,20 @@ export const file = async (value) => {
     });
   });
 }
+
+export const notification = async (value) => {
+  window.electron?.ipcRenderer?.sendMessage('notification', [value]);
+  return new Promise((resolve) => {
+    window.electron?.ipcRenderer?.once('notification', (arg) => {
+      resolve(arg);
+    });
+  });
+}
+export const update = async (value) => {
+  window.electron?.ipcRenderer?.sendMessage('update', [value]);
+  return new Promise((resolve) => {
+    window.electron?.ipcRenderer?.once('update', (arg) => {
+      resolve(arg);
+    });
+  });
+}
